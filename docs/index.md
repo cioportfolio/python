@@ -59,5 +59,14 @@ Use a python editor to try these exercises:
 
 ## Small helper programs
 
-Functions are small programs which help you make bigger, more complicated programmes.
+Functions are small programs which help you make bigger, more complicated programmes. Here is a simple example:
+
+```python
+def make_giant(original_height):
+  new_height = original_height * 10
+  return new-height
+```
+
+This makes a function called "make_giant" which takes one input and shows the input on the screen with a label.
+
 
