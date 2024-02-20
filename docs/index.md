@@ -121,3 +121,26 @@ Use a Python editor to try these exercises:
 
 There is lots more to learn about functions. You can search for more help online or just look at [w3schools](https://www.w3schools.com/python/python_functions.asp).
 
+## Writing less code and reacting to events
+
+When you write a program Python will normally perform each line in sequence.
+
+```python
+line of code # 1st step
+line of code # 2nd step
+line of code # 3rd step
+... # more steps
+```
+
+For almost any interesting program this approach won't be enough on its own. Here are some reasons:
+
+- Sometime you will be working with lots of data and information. If you can only do one step after the other you will have to write lots of boring repetitive code.
+- Complex programs will be very hard to read - imagine if books didn't have chapters and paragraphs!
+- A program is unable to change what it does in response to events - imagine a compute game that ignored the controller!
+
+Programs give you ways to change the flow of the program so that you can make your code easier to ready, quicker to write and react to events. These are sometimes call control structures. The main structures are:
+
+- Subprograms or functions that we have seen already. You can write some code, wrap it up in a function and re-use the same code many times. Your function can have a helpful name which makes the code easier to understand and you can use inputs so that the function can do different things in different circumstances.
+- Branches, if-statements and switch-statements. We will cover these later. if-statements allow your program to go down different paths depending upon an input. That could be from a user, from a sensor or from somewhere else in the program.
+- Loops and repetition. We will cover these later too. These also let you write one bit of code and use it many times. Sometimes you will find it easier to solve a problem with a loop and sometimes a function will be easier. Learning both will let you pick the easiest approach.
+
