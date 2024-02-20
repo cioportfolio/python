@@ -47,7 +47,7 @@ for next_column in range(number_of_columns):
 
 This makes a special variable called "next_column" which we can use inside the "for" loop.
 
-### Exercise
+### Practice
 
 Use a python editor to try these exercises:
 
@@ -62,11 +62,55 @@ Use a python editor to try these exercises:
 Functions are small programs which help you make bigger, more complicated programmes. Here is a simple example:
 
 ```python
-def make_giant(original_height):
-  new_height = original_height * 10
-  return new-height
+def double_it(original_value):
+  new_value = original_value * 2
+  return new_value
 ```
 
-This makes a function called "make_giant" which takes one input and shows the input on the screen with a label.
+This makes a function called "double_it" which takes one input, doubles it and returns the result. Once we have told Python about our helper programme we can use it in lots of different ways. Here are some examples:
+
+```python
+print(double_it(5)) # Will print the number 10
+child=1.4
+giant=double_it(child) # Uses a variable as the input and puts the result in a variable
+```
+
+All function definitions follow a similar pattern.
+
+```python
+def function_name (names_of_parameter):
+  #...
+  #... lines of code inside the function
+  #...
+  #... return some_value
+
+#... lines of code not inside the function
+```
+
+Some things to notice:
+- `def` is a special key word which is short for "define" and tells python we are going to tell it about a function
+- There are always brackets after the function name
+- The function can take inputs. If we have inputs we have to give each of them a name so we can use them in our helper programme. If you have no inputs we still keep the brackets. If we have more than one we put "," between the input names
+- The first line ends with ":" so we know what follows will be a block of code
+- Each line in the block of code is moved right (called an indent) with the tab key so Python can tell where the block starts an stops
+- We can give back a result by using the special "return" key word with the value we want to give back.
+
+Here are some more helper functions which shows we can make helper functions using other functions.
+
+```python
+def multiplyer(first_value, second_value):
+  return first_value * second_value
+
+def triple_it(input_value):
+  return multiplyer(input_value, 3)
+```
+
+### Practice
+
+Use a Python editor to try these exercises:
+
+- Make an function called "add1" which takes one number as an input, adds 1 to it and gives back the result
+- Test your function by giving it some numbers and printing the results
+- Do the same again but with an "adder" function which takes two inputs and adds them together
 
 
