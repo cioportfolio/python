@@ -57,6 +57,10 @@ Use a python editor to try these exercises:
 - Now make a variable called "great_height" and make it 10 times the size of "height"
 - Print "great_height"
 
+### Learning more
+
+There is lots more to learn about variables. You can search for more help online or just look at [w3schools](https://www.w3schools.com/python/python_variables.asp).
+
 ## Small helper programs
 
 Functions are small programs which help you make bigger, more complicated programmes. Here is a simple example:
@@ -113,4 +117,7 @@ Use a Python editor to try these exercises:
 - Test your function by giving it some numbers and printing the results
 - Do the same again but with an "adder" function which takes two inputs and adds them together
 
+### Learning more
+
+There is lots more to learn about functions. You can search for more help online or just look at [w3schools](https://www.w3schools.com/python/python_functions.asp).
 
