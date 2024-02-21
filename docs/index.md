@@ -2,7 +2,14 @@
 
 At the [TechJams](https://techjam.softwarecornwall.org/) you can get started with the [Python](https://www.python.org/) programing language by working through some of our pre-prepared exercises. In these exercises you will have used things like [variables](https://www.w3schools.com/python/python_variables.asp), [functions](https://www.w3schools.com/python/python_functions.asp) and [control flow](https://www.w3schools.com/python/python_for_loops.asp) but you might not have realised what these can do. As you take on your own projects it will really help if you understand these things a little more so that you can use them yourself.
 
-This guide assumes you are coding with Python but other programing languages do things in similar ways.
+This guide includes:
+
+- [Using variables to remember and name things](#remembering-and-naming-things)
+- [Using functions to make code shorter and easier to read](#small-helper-programs)
+- [Using branches to respond to different events](#switching-between-different-bits-of-code)
+- [Using loops to repeat code many times](#repeating-code-many-times)
+
+The sections have some simple explanations and examples, reminders of some common problems, exercises to try and where you can learn more when you are ready.
 
 ## Using a Python workspace
 
@@ -184,9 +191,9 @@ Python gives you ways to change the flow of the program so that you can make you
 
 It is normal to use all of these structures in your program. All programing languages have these structures but they might use different key words, punctuation and layouts for them.
 
-### Switching between different bits of code
+## Switching between different bits of code
 
-You programme can do different things in different circumstances. Here is a simple example.
+Your program can do different things in different circumstances. Here is a simple example.
 
 ```python
 your_age = int(input("Enter someone's age:"))
@@ -196,7 +203,7 @@ if your_age < 16:
 print('Thank you')
 ```
 
-The `print` command is in a branch of code. Python checks the value saved in the variable `your_age` and only used the branch if the value is less than 16. Otherwise, the Python skips past the branch and carries on. You tell Python which lines are part of the branch by indenting them (shifting right).
+The second `print` command is in a branch of code. The `if` statement tells Python to check the value saved in the variable `your_age` and only uses the branch if the value is less than 16. Otherwise, Python skips past the branch and carries on. You tell Python which lines are part of the branch by indenting them (shifting right).
 
 Here is a slightly different example with two branches.
 
@@ -223,12 +230,18 @@ else:
     print('They can stay at TechJam on their own, but only if they act responsibly!')
 print('Thank you')
 ```
+Things to note:
+
+- The conditions in the `if` and `elif` lines are tried one at a time.
+- The first one that is `True` gets used and all the rest are ignored.
+- if you have an `else` you can only have a single one and it must be for the last branch. This is used if all of the `if` and `elif` tests are `False`.
+- you can have lots of `elif` branches.
 
 You can have any number of lines of code in each branch. Just like for functions you use indents (shift the line to the right) so that Python can see where the branch starts and finishes.
 
 ### Common problems with branches:
 
-- Check how you have indented (shifted right) your lines of code, especially if you are using branches with other things such as [functions](#small-helper-programs) or [loops](#tbc).
+- Check how you have indented (shifted right) your lines of code, especially if you are using branches with other things such as [functions](#small-helper-programs) or [loops](#repeating-code-many-times).
 - it is easy to forget the `:` at the end of the `if`, `elif` and `else` lines.
 - It is easy to put `=` (which means define or update a [variable](#remembering-and-naming-things)) when you really meant to put `==` (which means tell me if these two things are the same).
 - You only need to add a few branches to make your program complicated and hard to understand. It can be an good idea to try out small parts of your program on their own and check they do what you expect before you put them all together. It can be easier to understand if you split complicated code into several small helper functions.
@@ -254,10 +267,118 @@ Try out the example branches in your Python editor and change them to see what h
 - Make a quiz program which poses some questions and uses branches to check the answers and either give congratulations or the correct answer.
 - Extend your quiz program by adding a variable to keep score and increase the score each time someone gives a correct answer.
 
-#### Learn more about branches
+### Learn more about branches
 
 There is lots more to learn about branches. You can search online or look at [W3Schools](https://www.w3schools.com/python/python_conditions.asp)
 
 There are some more advanced kinds of branches to investigate. Make sure you can use if-statements first. When you are ready have a look for `match ... case` statements and `try ... except` statements.
 
+## Repeating code many times
 
+If you are working with lots of information it is easy to have boring repetitive code like this.
+
+```python
+LEDStrip[0]=(0,0,0)
+LEDStrip[1]=(0,0,0)
+LEDStrip[2]=(0,0,0)
+... # lots more similar lines
+LEDStrip[199]=(0,0,0)
+```
+
+If you look carefully, each line is the same except for the index (the number inside the `[]` brackets). We have already learnt about [helper functions](#small-helper-programs) but, in this case it doesn't save us much effort. Here is an example.
+
+```python
+def clear(idx):
+    LEDStrip[idx]=(0,0,0)
+
+clear(0)
+clear(1)
+clear(2)
+... # lots of similar lines
+clear(199)
+```
+
+For this kind of repetition we can use a Python loop instead. Here is the same program using a `for` loop.
+
+```python
+for LED_num in range(200):
+    LEDStrip[LED_num]=(0,0,0)
+```
+
+Things to note:
+
+- `for` is a special key word which tells Python what sort of loop we want. We'll see another type in a moment.
+- after the `in` key word we have a list or something which makes a list. In this example we have used the [`range`](https://www.w3schools.com/python/ref_func_range.asp) function to make a list which starts at 0 and goes all the way up to 199 (`range` gives us 200 values but as the first one is 0 the last will be 199).
+- `LED_num` is a special variable (we could have called it `next_led`, `counter` or any helpful variable name).
+- After the `:` we have a block of indented (shifted right) code just like we might have in a branch or helper function.
+- Python will take each item in the list one after the other, update the value in our special variable and run the block of code.
+
+We don't have to use `range` in our loops and we aren't limited to lists of numbers but `for` with a `range` is a very common pattern you will notice quite a lot.
+
+Here is another type of loop we can use in Python which is introduced with the key word `while`. This example looks different to the `for` loop but does exactly the same job.
+
+```python
+LED_num = 0
+while LED_num < 200:
+    LEDStrip[LED_num]=(0,0,0)
+    LED_num = LED_num+1
+```
+
+Some things to note:
+
+- The `while` key word is followed by a condition which is similar to the condition we might use with branches and `if`.
+- The `while` line ends with a `:`
+- There is a block of code with indented (shifted right) lines which shows Python what code is repeated by the loop
+- Python checks the condition on the `while` line. If the condition is `True` it runs the block of code and checks again
+- If the condition is `False` it skips the block of code and carries on after the loop.
+- We still have a `LED_num` variable but the `while` loop does not look after it the way that a `for` loop does. We've set it to the correct start value before the loop and change it each time.
+
+In this example the `for` version is a bit easier than the `while` version. In some cases you may find the `while` option better. For example, if you need to step through two lists in parallel a `while` loop will be easier to understand than a `for` loop. Another example is looping forever like this.
+
+```python
+While True: # With a capital 'T'. Not 'true'
+    ... 
+    ... # Repeat this block of code forever!
+    ...
+
+... # Python won't get to this code unless we do something special to 'break' out of this loop.
+```
+
+### Common problems with loops
+
+Common problems with loops are very similar to the ones you have already seen for [branches](#common-problems-with-branches):
+
+- Check how you have indented (shifted right) your lines of code, especially if you are using loops with other things such as [functions](#small-helper-programs) or [branches](#switching-between-different-bits-of-code).
+- it is easy to forget the `:` at the end of the `for` or `while` lines.
+- In a `while` loop it is easy to put `=` (which means define or update a [variable](#remembering-and-naming-things)) when you really meant to put `==` (which means check if these two things are the same).
+- If Python stops with an error in the loop it can sometimes be hard to spot what is wrong. It might work on some repetitions and not others, for example, if the special loop variable gets too large. [Some Python editors have debug tools](https://cs111.wellesley.edu/labs/lab02/debugger) to help you find these kinds or problem.
+- It is easy to make mistakes if you have loops with lots of code in them. If you are getting stuck try breaking up a big block in a loop into sections and move the sections into a helper function with a helpful name.
+
+### Practice with loops
+
+Try out the example loops in your Python editor:
+
+- Use a `for` loop to print all the numbers from 0 to 50
+- Can you change your loop to print only the event numbers?
+- Can you change your loop to print odd numbers between 10 and 40?
+- Create a list of your favourite characters and make a loop to print each character in the list. You can make a list like this
+
+    ```python
+    characters = ['Batman', 'Luke Skywalker' .... ]
+    ```
+
+- Can you change your loop so that each favourite is preceeded by a line number e.g.
+
+    ```text
+    1.Batman
+    2.Luke Skywalker
+    ...
+    ```
+
+- Can you change your loop so that it says 'is better than' between each favourite but not before the first and not after the last favourite in the list? *Hint: You may need to put a branch inside your loop*
+
+### Learn more about loops
+
+There is lots more to learn about loops. You can search online or look at [W3Schools](https://www.w3schools.com/python/python_while_loops.asp)
+
+There are some more advanced kinds of loops to investigate. Make sure you can use basic `for` and `while` first. When you are ready have a look for list comprehension and recursion. For advanced Python users there are also iterators and generators.
