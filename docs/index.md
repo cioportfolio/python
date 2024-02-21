@@ -288,8 +288,8 @@ LEDStrip[199]=(0,0,0)
 If you look carefully, each line is the same except for the index (the number inside the `[]` brackets). We have already learnt about [helper functions](#small-helper-programs) but, in this case it doesn't save us much effort. Here is an example.
 
 ```python
-def clear(idx):
-    LEDStrip[idx]=(0,0,0)
+def clear(LED_num):
+    LEDStrip[LED_num]=(0,0,0)
 
 clear(0)
 clear(1)
@@ -379,6 +379,6 @@ Try out the example loops in your Python editor:
 
 ### Learn more about loops
 
-There is lots more to learn about loops. You can search online or look at [W3Schools](https://www.w3schools.com/python/python_while_loops.asp)
+There is lots more to learn about loops. You can search online or look at [W3Schools](https://www.w3schools.com/python/python_while_loops.asp). Look for some special key words that work with loops like `break`, `continue`, `else`.
 
 There are some more advanced kinds of loops to investigate. Make sure you can use basic `for` and `while` first. When you are ready have a look for list comprehension and recursion. For advanced Python users there are also iterators and generators.
