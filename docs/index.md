@@ -90,10 +90,13 @@ Use a python editor to try these exercises:
 - Now make a variable called "great_height" and make it 10 times the size of "height"
 - Print "great_height"
 
-### Learning more about variables:
+### Learning more about variables
 
-- There is lots more to learn about variables. You can search for more help online or just look at [w3schools](https://www.w3schools.com/python/python_variables.asp).
-- Once you feel ok with variables you can learn more about [data and types of data in Python](https://www.w3schools.com/python/python_datatypes.asp)
+There is lots more to learn about variables. You can search for more help online or just look at [w3schools](https://www.w3schools.com/python/python_variables.asp).
+
+Once you feel ok with variables you can learn more about [data and types of data in Python](https://www.w3schools.com/python/python_datatypes.asp).
+
+Python has libraries for more complex data structures but these are probably for quite advanced programers.
 
 ## Small helper programs
 
@@ -161,11 +164,11 @@ Use a Python editor to try these exercises:
 - Test your function by giving it some numbers and printing the results
 - Do the same again but with an "adder" function which takes two inputs and adds them together
 
-There are other sorts of subprogram in Python but make sure you are really confident with functions first. When you are ready look at [modules](https://www.w3schools.com/python/python_modules.asp), [classes](https://www.w3schools.com/python/python_classes.asp) and [lambdas](https://www.w3schools.com/python/python_lambda.asp)
-
 ### Learning more about functions
 
 There is lots more to learn about functions. You can search for more help online or just look at [w3schools](https://www.w3schools.com/python/python_functions.asp).
+
+There are other sorts of subprogram in Python but make sure you are really confident with basic functions first. When you are ready look at [modules](https://www.w3schools.com/python/python_modules.asp), [classes](https://www.w3schools.com/python/python_classes.asp) and [lambdas](https://www.w3schools.com/python/python_lambda.asp)
 
 ## Writing less code and reacting to events
 
@@ -461,3 +464,7 @@ Go back to quiz game you started in the [section about branches](#practice-with-
 
 - Read the questions and answers from a text file. You might need some help about [looping through a file](https://www.w3schools.com/python/python_file_open.asp#:~:text=By%20looping)
 - If a player beats the highest score also let them add a new quiz question and answer. You might need to close and open the quiz file in a different mode.
+
+## Even more practice
+
+There are loads of online places to get more practice but please check with a responsible adult to make sure you meet any age limits and get permission for anything that has a cost. [Codewars (14+ years)](codewars.com) offers free challenges and lets you earn points and badges as you progress.
