@@ -382,3 +382,81 @@ Try out the example loops in your Python editor:
 There is lots more to learn about loops. You can search online or look at [W3Schools](https://www.w3schools.com/python/python_while_loops.asp). Look for some special key words that work with loops like `break`, `continue`, `else`.
 
 There are some more advanced kinds of loops to investigate. Make sure you can use basic `for` and `while` first. When you are ready have a look for list comprehension and recursion. For advanced Python users there are also iterators and generators.
+
+## Mixing controls for big and complex programs
+
+[Functions](#small-helper-programs), [branches](#switching-between-different-bits-of-code) and [loops](#repeating-code-many-times) are useful on their own but are even more powerful when used together. Earlier we saw how we could use a loop to control lots of LEDs at once. Putting the loop inside a function can make it even easier to use.
+
+```python
+def clear_LEDs(): # define the helper function
+    for LED in range(200):
+        LEDStrip[LED_num]=(0,0,0)
+
+clear_LEDs() # Use the helper function.
+```
+
+Things to note:
+
+- The `for` line is indented (shifted right) because it is part of the function. Sometime you will see this refered to as 'nesting'. The `for` loop is nested inside the function.
+- The 'LEDStrip' line is indented twice. This is because it is inside a `for` loop and the `for` is already indented once.
+
+Here is an example of using a function and a branch inside a loop.
+
+```python
+import keyboard
+
+while True: # Loop forever unless we do something special
+    clear_LEDs() # Function used inside a loop
+    ...
+    ... # more code that might display a pattern
+    ...
+    if keyboard.read_key() == 'q': 
+        # branch to break out of the loop
+        break
+print("Finished")
+```
+
+Things to note:
+
+- Look carefully at how the lines are indented (shifted to the right). The branch is 'nested' inside the loop so all of its lines have an extra indent (extra right shift).
+- The 'clear_LEDs' function has a loop inside it. We could put the loop here directly but using the function is easier to understand and doesn't have extra indents.
+
+You can combine or 'nest' functions, branches and loops as much as you like but take care. It is easy to make mistakes with lots of indents. Splitting things up into helper functions is makes the code much easier to manage.
+
+### Practice combining functions, branches and loops
+
+Go back to quiz game you started in the [section about branches](#practice-with-branches). Change your programme by mixing in functions and loops and some new branches. Add these features and make sure they work before trying the next one. Remember to use small helper functions to keep your blocks of code small and easy to understand:
+
+- Put the questions and answers into lists and turn the quiz into a loop. There are several ways to do this but here is a hint
+
+    ```python
+    quiz=[ # A list of tuples
+        ('question1','answer1'), 
+        ('question2','answer2'),
+        ...
+    ]
+    for (q,a) in quiz:
+        ... # q will be each question in turn
+        ... # a will be the matching answer each time 
+    ```
+
+- allow the quiz player to pass if they don't know the answer
+- give a penalty score (e.g. lose 5 points) if they get an answer wrong. There is no penalty for passing.
+- set a limit to the number of passes (e.g. 3 times each quiz)
+- If the player has used up their passes but tries to pass again print an appropriate message and ask the question again.
+- Put the whole quiz inside a loop and at the end of each quiz invite another player to try.
+- Keep a track of the highest score so far.
+- If a player beats the high score let them enter a gamer tag (such as 3 letters).
+- Print the top few high score before each quiz starts. Here are some hints that you might use.
+
+    ```python
+    high_to_low = [] #empty high score tables
+    low_to_high = []
+    high_to_low.insert(0,(500,'AAA')) # put a new high score at the beginning
+    highest_score = high_to_low[0]
+    low_to_high.append((500, 'AAA')) # add a new high score at the end
+    highest_score = low_to_high[-1]
+    ```
+
+- Read the questions and answers from a text file. You might need some help about [looping through a file](https://www.w3schools.com/python/python_file_open.asp#:~:text=By%20looping)
+- If a player beats the highest score also let them add a new quiz question and answer. You might need to close and open the quiz file in a different mode.
