@@ -8,6 +8,7 @@ This guide includes:
 - [Using functions to make code shorter and easier to read](#small-helper-programs)
 - [Using branches to respond to different events](#switching-between-different-bits-of-code)
 - [Using loops to repeat code many times](#repeating-code-many-times)
+- [Putting everything together](#mixing-controls-for-big-and-complex-programs)
 
 The sections have some simple explanations and examples, reminders of some common problems, exercises to try and where you can learn more when you are ready.
 
