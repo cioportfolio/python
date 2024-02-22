@@ -14,6 +14,8 @@ The sections have some simple explanations and examples, reminders of some commo
 
 ## Using a Python workspace
 
+Practising is better than just reading so use this section to find a place to practice your Python.
+
 ### Raspberry Pi
 
 [Thonny](https://thonny.org/) is usually already installed and can be used for these exercises
@@ -96,7 +98,7 @@ There is lots more to learn about variables. You can search for more help online
 
 Once you feel ok with variables you can learn more about [data and types of data in Python](https://www.w3schools.com/python/python_datatypes.asp).
 
-Python has libraries for more complex data structures but these are probably for quite advanced programers.
+Python has modules you can `import` for more complex data structures but these are probably for quite advanced programers.
 
 ## Small helper programs
 
@@ -116,6 +118,8 @@ child=1.4
 giant=double_it(child) # Uses a variable as the input and puts the result in a variable
 ```
 
+When you try this yourself notice that the block of code inside the function doesn't run when you define the function. At the define stage Python just remebers the function for later. When you use the function later, Python remembers the definition and runs that block of code then. If this doesn't make sense try some of practice challenges and add in some `print` commands and watch when they appear.
+
 All function definitions follow a similar pattern.
 
 ```python
@@ -131,12 +135,12 @@ line of code # this code is not part of the function
 Some things to notice:
 
 - `def` is a special key word which is short for "define" and tells python that we want it to remember a function
-- There are always brackets after the function name, even if there is nothing inside the brackets. Brackets help Python understand your are talking about a function rather than the name of a variable.
+- There are always brackets after the function name, even if there is nothing inside the brackets. Brackets help Python understand you are talking about a function rather than the name of a variable.
 - The function can take inputs. If we have inputs we have to give each of them a name so we can use them in our helper programme. If you have no inputs we still keep the brackets. If we have more than one we put "," between the input names
 - The first line ends with ":" so we know what follows will be a block of code
-- Each line in the block of code is moved right (called an indent) with the tab key so Python can tell where the block starts an stops
+- Each line in the block of code is moved right (called an indent) with the tab key so Python can tell where the block starts and stops
 - We can give back a result by using the special "return" key word with the value we want to give back.
-- The lines after your function are not indented so that Python knows where you helper program finishes.
+- The lines after your function are not indented so that Python knows where your helper program finishes.
 
 Here are some more helper functions which shows we can make helper functions using other functions.
 
@@ -160,6 +164,8 @@ def triple_it(input_value):
 
 Use a Python editor to try these exercises:
 
+- Try the example functions above.
+- Print some messages before the definition, inside the function block of code and after the definition so you can see when the code is actually run.
 - Make a function called "add1" which takes one number as an input, adds 1 to it and gives back the result
 - Test your function by giving it some numbers and printing the results
 - Do the same again but with an "adder" function which takes two inputs and adds them together
