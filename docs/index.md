@@ -447,7 +447,17 @@ Look at loop forever example above. Notice the last `print` command:
 
 - When will that message appear and how many times?
 - If you indent (shift right) that line once how will this change the program?
-- Make a trial program in your editor and see if you are correct. You can just replace the clear_LEDs function with a printed message for this trial.
+- Make a trial program in your editor and see if you are correct. Here is a version of the programme you can use to experiment
+
+    ```python
+    while True:
+        print("Inside loop")
+        if input("Enter q to quit or anything else to continue:") == 'q':
+            print("Inside quit branch")
+            break
+    print("Finished?") # change the indent on this line
+    ```
+
 - What about indenting the print one more time?
 - Try it and see if you are right.
 - Can you explain what is going on?
