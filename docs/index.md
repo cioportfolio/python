@@ -184,16 +184,16 @@ line of code # 3rd step
 For almost any interesting program this won't be enough on its own. Here are some reasons:
 
 - Sometime you will be working with lots of data and information. If you can only do one step after the other you will have to write lots of boring repetitive code.
-- A program is unable to change what it does in response to events - imagine a compute game that ignored the controller!
+- A simple step-by-step program can't change what it does in response to events - imagine a compute game that ignored the controller!
 - Complex programs will be very hard to read - imagine if books didn't have chapters and paragraphs!
 
 Python gives you ways to change the flow of the program so that you can make your code easier to read, quicker to write and react to events. These are sometimes called control structures. The main structures are:
 
 - Subprograms or functions that we have [seen already](#small-helper-programs). You can write some code, wrap it up in a function and re-use the same code many times. Your function can have a helpful name which makes the code easier to understand and you can use inputs so that the function can do different things in different circumstances.
-- [Branches](https://www.enjoyalgorithms.com/blog/conditions-and-branching-in-python). We will cover these later. Branches allow your program to go down different paths depending upon an input. That could be from a person using the program, from some kind of sensor or from somewhere else in the program.
-- Loops and repetition. We will cover these later too. These let you write one bit of code and use it many times.
+- [Branches](https://www.enjoyalgorithms.com/blog/conditions-and-branching-in-python). We will [cover these later](#switching-between-different-bits-of-code). Branches allow your program to go down different paths depending upon an input. That could be from a person using the program, from some kind of sensor or from somewhere else in the program.
+- Loops and repetition. We will [cover these later](#repeating-code-many-times) too. These let you write one bit of code and use it many times.
 
-It is normal to use all of these structures in your program. All programing languages have these structures but they might use different key words, punctuation and layouts for them.
+It is normal to use all of these structures in your program.
 
 ## Switching between different bits of code
 
@@ -241,15 +241,15 @@ Things to note:
 - if you have an `else` you can only have a single one and it must be for the last branch. This is used if all of the `if` and `elif` tests are `False`.
 - you can have lots of `elif` branches.
 
-You can have any number of lines of code in each branch. Just like for functions you use indents (shift the line to the right) so that Python can see where the branch starts and finishes.
+You can have any number of lines of code in each branch. Just like for functions you use indents (shift the line to the right) so that Python can see where each branch starts and finishes.
 
 ### Common problems with branches:
 
 - Check how you have indented (shifted right) your lines of code, especially if you are using branches with other things such as [functions](#small-helper-programs) or [loops](#repeating-code-many-times).
 - it is easy to forget the `:` at the end of the `if`, `elif` and `else` lines.
 - It is easy to put `=` (which means define or update a [variable](#remembering-and-naming-things)) when you really meant to put `==` (which means tell me if these two things are the same).
-- You only need to add a few branches to make your program complicated and hard to understand. It can be an good idea to try out small parts of your program on their own and check they do what you expect before you put them all together. It can be easier to understand if you split complicated code into several small helper functions.
-- It is easy to make mistakes if you have big branches with lots of code in them. If you are getting stuck try breaking up a big branch into sections and move the sections into a helper function with a helpful name.
+- You only need to add a few branches to make your program complicated and hard to understand. It can be an good idea to try out small parts of your program on their own and check they do what you expect before you put them all together. It can be easier to understand if you split complicated code into several [small helper functions](#small-helper-programs).
+- It is easy to make mistakes if you have big branches with lots of code in them. If you are getting stuck try breaking up a big branch into sections and move the sections into a [helper function](#small-helper-programs) with a helpful name.
 
 ### Practice with branches
 
@@ -269,19 +269,20 @@ Try out the example branches in your Python editor and change them to see what h
   - Can you think of some more branches and add them?
 
 - Make a quiz program which poses some questions and uses branches to check the answers and either give congratulations or the correct answer.
-- Extend your quiz program by adding a variable to keep score and increase the score each time someone gives a correct answer.
+- Extend your quiz program by adding a [variable](#remembering-and-naming-things) to keep score and increase the score each time someone gives a correct answer.
 
 ### Learn more about branches
 
 There is lots more to learn about branches. You can search online or look at [W3Schools](https://www.w3schools.com/python/python_conditions.asp)
 
-There are some more advanced kinds of branches to investigate. Make sure you can use if-statements first. When you are ready have a look for `match ... case` statements and `try ... except` statements.
+There are some more advanced kinds of branches to investigate. Make sure you can use basic if-statements first. When you are ready have a look for `match ... case` statements and `try ... except` statements.
 
 ## Repeating code many times
 
 If you are working with lots of information it is easy to have boring repetitive code like this.
 
 ```python
+# Clear all the LEDs in the LED strip
 LEDStrip[0]=(0,0,0)
 LEDStrip[1]=(0,0,0)
 LEDStrip[2]=(0,0,0)
@@ -292,9 +293,11 @@ LEDStrip[199]=(0,0,0)
 If you look carefully, each line is the same except for the index (the number inside the `[]` brackets). We have already learnt about [helper functions](#small-helper-programs) but, in this case it doesn't save us much effort. Here is an example.
 
 ```python
+# Clear one LED in the LED strip
 def clear(LED_num):
     LEDStrip[LED_num]=(0,0,0)
 
+# Clear all the LEDs in the LED Strip
 clear(0)
 clear(1)
 clear(2)
@@ -305,6 +308,7 @@ clear(199)
 For this kind of repetition we can use a Python loop instead. Here is the same program using a `for` loop.
 
 ```python
+# Clear all the LEDs in the LED strip
 for LED_num in range(200):
     LEDStrip[LED_num]=(0,0,0)
 ```
@@ -315,7 +319,9 @@ Things to note:
 - after the `in` key word we have a list or something which makes a list. In this example we have used the [`range`](https://www.w3schools.com/python/ref_func_range.asp) function to make a list which starts at 0 and goes all the way up to 199 (`range` gives us 200 values but as the first one is 0 the last will be 199).
 - `LED_num` is a special variable (we could have called it `next_led`, `counter` or any helpful variable name).
 - After the `:` we have a block of indented (shifted right) code just like we might have in a branch or helper function.
-- Python will take each item in the list one after the other, update the value in our special variable and run the block of code.
+- Python will work through each item in the list one after the other. In this example it will be all the numbers from 0 to 199.
+- Each time Python will save the item in our special variable and run the block of code. First time Python saves 0. In the next repetition Python saves 1. And so on all the way through to 199.
+- In our block of code we can use the name of the special variable to get the current item in the list. First time it will have the value 0. Next will be 1 and so on up to 199.
 
 We don't have to use `range` in our loops and we aren't limited to lists of numbers but `for` with a `range` is a very common pattern you will notice quite a lot.
 
@@ -335,7 +341,7 @@ Some things to note:
 - There is a block of code with indented (shifted right) lines which shows Python what code is repeated by the loop
 - Python checks the condition on the `while` line. If the condition is `True` it runs the block of code and checks again
 - If the condition is `False` it skips the block of code and carries on after the loop.
-- We still have a `LED_num` variable but the `while` loop does not look after it the way that a `for` loop does. We've set it to the correct start value before the loop and change it each time.
+- We still have a `LED_num` variable but the `while` loop does not look after it the way that a `for` loop does. We have to remember to set it to the correct start value before the loop and change it each time.
 
 In this example the `for` version is a bit easier than the `while` version. In some cases you may find the `while` option better. For example, if you need to step through two lists in parallel a `while` loop will be easier to understand than a `for` loop. Another example is looping forever like this.
 
@@ -355,14 +361,14 @@ Common problems with loops are very similar to the ones you have already seen fo
 - Check how you have indented (shifted right) your lines of code, especially if you are using loops with other things such as [functions](#small-helper-programs) or [branches](#switching-between-different-bits-of-code).
 - it is easy to forget the `:` at the end of the `for` or `while` lines.
 - In a `while` loop it is easy to put `=` (which means define or update a [variable](#remembering-and-naming-things)) when you really meant to put `==` (which means check if these two things are the same).
-- If Python stops with an error in the loop it can sometimes be hard to spot what is wrong. It might work on some repetitions and not others, for example, if the special loop variable gets too large. [Some Python editors have debug tools](https://cs111.wellesley.edu/labs/lab02/debugger) to help you find these kinds or problem.
-- It is easy to make mistakes if you have loops with lots of code in them. If you are getting stuck try breaking up a big block in a loop into sections and move the sections into a helper function with a helpful name.
+- If Python stops with an error in the loop it can sometimes be hard to spot what is wrong. It might work on some repetitions and not others, for example, if the special loop variable gets too large. [Some Python editors have debug tools](https://cs111.wellesley.edu/labs/lab02/debugger) to help you find these kinds of problem.
+- It is easy to make mistakes if you have loops with lots of code in them. If you are getting stuck try breaking up a big block in a loop into sections and move the sections into a [helper function](#small-helper-programs) with a helpful name.
 
 ### Practice with loops
 
 Try out the example loops in your Python editor:
 
-- Use a `for` loop to print all the numbers from 0 to 50
+- Use a `for` loop to print all the numbers from 0 to 50.
 - Can you change your loop to print only the event numbers?
 - Can you change your loop to print odd numbers between 10 and 40?
 - Create a list of your favourite characters and make a loop to print each character in the list. You can make a list like this
@@ -379,7 +385,7 @@ Try out the example loops in your Python editor:
     ...
     ```
 
-- Can you change your loop so that it says 'is better than' between each favourite but not before the first and not after the last favourite in the list? *Hint: You may need to put a branch inside your loop*
+- Can you change your loop so that it says 'is better than' between each favourite but not before the first and not after the last favourite in the list? *Hint: You may need to put a [branch](#switching-between-different-bits-of-code) inside your loop*
 
 ### Learn more about loops
 
@@ -392,16 +398,18 @@ There are some more advanced kinds of loops to investigate. Make sure you can us
 [Functions](#small-helper-programs), [branches](#switching-between-different-bits-of-code) and [loops](#repeating-code-many-times) are useful on their own but are even more powerful when used together. Earlier we saw how we could use a loop to control lots of LEDs at once. Putting the loop inside a function can make it even easier to use.
 
 ```python
-def clear_LEDs(): # define the helper function
+# Function to clear all the LEDs in the LED strip
+def clear_LEDs(): # defines the helper function
     for LED in range(200):
         LEDStrip[LED_num]=(0,0,0)
 
+# Clear all the LEDs in the LED strip
 clear_LEDs() # Use the helper function.
 ```
 
 Things to note:
 
-- The `for` line is indented (shifted right) because it is part of the function. Sometime you will see this refered to as 'nesting'. The `for` loop is nested inside the function.
+- The `for` line is indented (shifted right) because it is part of (inside) the function. Sometime you will see this refered to as 'nesting'. The `for` loop is nested inside the function.
 - The 'LEDStrip' line is indented twice. This is because it is inside a `for` loop and the `for` is already indented once.
 
 Here is an example of using a function and a branch inside a loop.
@@ -425,11 +433,20 @@ Things to note:
 - Look carefully at how the lines are indented (shifted to the right). The branch is 'nested' inside the loop so all of its lines have an extra indent (extra right shift).
 - The 'clear_LEDs' function has a loop inside it. We could put the loop here directly but using the function is easier to understand and doesn't have extra indents.
 
-You can combine or 'nest' functions, branches and loops as much as you like but take care. It is easy to make mistakes with lots of indents. Splitting things up into helper functions is makes the code much easier to manage.
+You can combine or 'nest' functions, branches and loops as much as you like but take care. It is easy to make mistakes with lots of indents. Splitting things up into helper functions makes the code much easier to manage.
 
 ### Practice combining functions, branches and loops
 
-Go back to quiz game you started in the [section about branches](#practice-with-branches). Change your programme by mixing in functions and loops and some new branches. Add these features and make sure they work before trying the next one. Remember to use small helper functions to keep your blocks of code small and easy to understand:
+Look at loop forever example above. Notice the last `print` command:
+
+- When will that message appear and how many times?
+- If you indent (shift right) that line once how will this change the program?
+- Make a trial program in your editor and see if you are correct. You can just replace the clear_LEDs function with a printed message for this trial.
+- What about indenting the print one more time?
+- Try it and see if you are right.
+- Can you explain what is going on?
+
+Go back to quiz game you started in the [section about branches](#practice-with-branches). Change your programme by mixing in functions and loops and some new branches. Add these features and make sure each one works before trying the next one. Remember to use small helper functions to keep your blocks of code small and easy to understand:
 
 - Put the questions and answers into lists and turn the quiz into a loop. There are several ways to do this but here is a hint
 
@@ -444,9 +461,9 @@ Go back to quiz game you started in the [section about branches](#practice-with-
         ... # a will be the matching answer each time 
     ```
 
-- allow the quiz player to pass if they don't know the answer
+- allow the quiz player to pass if they don't know the answer.
 - give a penalty score (e.g. lose 5 points) if they get an answer wrong. There is no penalty for passing.
-- set a limit to the number of passes (e.g. 3 times each quiz)
+- set a limit to the number of passes (e.g. 3 times each quiz).
 - If the player has used up their passes but tries to pass again print an appropriate message and ask the question again.
 - Put the whole quiz inside a loop and at the end of each quiz invite another player to try.
 - Keep a track of the highest score so far.
