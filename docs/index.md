@@ -500,4 +500,4 @@ Go back to quiz game you started in the [section about branches](#practice-with-
 
 ## Even more practice
 
-There are loads of online places to get more practice but please check with a responsible adult to make sure you meet any age limits and get permission for anything that has a cost. [Codewars (14+ years)](https://codewars.com) offers free challenges and lets you earn points and badges as you progress.
+There are loads of online places to get more practice but please check with a responsible adult to make sure you meet any age limits and get permission for anything that has a cost. [Codewars (14+ years)](https://codewars.com) offers free challenges and lets you earn points and badges as you progress. You can also try a [computer vision challenge](https://cioportfolio.github.io/photofinish) we have created for TechJam
