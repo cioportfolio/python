@@ -118,7 +118,7 @@ child=1.4
 giant=double_it(child) # Uses a variable as the input and puts the result in a variable
 ```
 
-When you try this yourself notice that the block of code inside the function doesn't run when you define the function. At the define stage Python just remebers the function for later. When you use the function late, Python remembers the definition and runs that block of code then. If this doesn't make sense try some of practice challenges and add in some `print` commands and watch when they appear.
+When you try this yourself notice that the block of code inside the function doesn't run when you define the function. At the define stage Python just remebers the function for later. When you use the function later, Python remembers the definition and runs that block of code then. If this doesn't make sense try some of practice challenges and add in some `print` commands and watch when they appear.
 
 All function definitions follow a similar pattern.
 
