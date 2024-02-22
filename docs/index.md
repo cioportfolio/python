@@ -133,7 +133,7 @@ line of code # this code is not part of the function
 Some things to notice:
 
 - `def` is a special key word which is short for "define" and tells python that we want it to remember a function
-- There are always brackets after the function name, even if there is nothing inside the brackets. Brackets help Python understand your are talking about a function rather than the name of a variable.
+- There are always brackets after the function name, even if there is nothing inside the brackets. Brackets help Python understand you are talking about a function rather than the name of a variable.
 - The function can take inputs. If we have inputs we have to give each of them a name so we can use them in our helper programme. If you have no inputs we still keep the brackets. If we have more than one we put "," between the input names
 - The first line ends with ":" so we know what follows will be a block of code
 - Each line in the block of code is moved right (called an indent) with the tab key so Python can tell where the block starts an stops
