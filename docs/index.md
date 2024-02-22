@@ -138,7 +138,7 @@ Some things to notice:
 - The first line ends with ":" so we know what follows will be a block of code
 - Each line in the block of code is moved right (called an indent) with the tab key so Python can tell where the block starts and stops
 - We can give back a result by using the special "return" key word with the value we want to give back.
-- The lines after your function are not indented so that Python knows where you helper program finishes.
+- The lines after your function are not indented so that Python knows where your helper program finishes.
 
 Here are some more helper functions which shows we can make helper functions using other functions.
 
