@@ -14,6 +14,8 @@ The sections have some simple explanations and examples, reminders of some commo
 
 ## Using a Python workspace
 
+Practising is better than just reading so use this section to find a place to practice your Python.
+
 ### Raspberry Pi
 
 [Thonny](https://thonny.org/) is usually already installed and can be used for these exercises
@@ -96,7 +98,7 @@ There is lots more to learn about variables. You can search for more help online
 
 Once you feel ok with variables you can learn more about [data and types of data in Python](https://www.w3schools.com/python/python_datatypes.asp).
 
-Python has libraries for more complex data structures but these are probably for quite advanced programers.
+Python has modules you can `import` for more complex data structures but these are probably for quite advanced programers.
 
 ## Small helper programs
 
