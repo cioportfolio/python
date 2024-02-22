@@ -165,7 +165,7 @@ def triple_it(input_value):
 Use a Python editor to try these exercises:
 
 - Try the example functions above.
-- Print some messages before the definition, inside the function block of code snd after the definition so you can see when the code is actually run.
+- Print some messages before the definition, inside the function block of code and after the definition so you can see when the code is actually run.
 - Make a function called "add1" which takes one number as an input, adds 1 to it and gives back the result
 - Test your function by giving it some numbers and printing the results
 - Do the same again but with an "adder" function which takes two inputs and adds them together
