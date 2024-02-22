@@ -118,6 +118,8 @@ child=1.4
 giant=double_it(child) # Uses a variable as the input and puts the result in a variable
 ```
 
+When you try this yourself notice that the block of code inside the function doesn't run when you define the function. At the define stage Python just remebers the function for later. When you use the function late, Python remembers the definition and runs that block of code then. If this doesn't make sense try some of practice challenges and add in some `print` commands and watch when they appear.
+
 All function definitions follow a similar pattern.
 
 ```python
@@ -162,6 +164,8 @@ def triple_it(input_value):
 
 Use a Python editor to try these exercises:
 
+- Try the example functions above.
+- Print some messages before the definition, inside the function block of code snd after the definition so you can see when the code is actually run.
 - Make a function called "add1" which takes one number as an input, adds 1 to it and gives back the result
 - Test your function by giving it some numbers and printing the results
 - Do the same again but with an "adder" function which takes two inputs and adds them together
