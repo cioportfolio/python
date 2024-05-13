@@ -89,7 +89,7 @@ Use a python editor to try these exercises:
 - Make a variable called "height" and give it a value (e.g how tall are you?)
 - Print the variable
 - Try printing a variable we havent made like "great_height". What happens?
-- Now make a variable called "great_height" and make it 10 times the size of "height"
+- Now make a variable called "great_height" and make it 10 times the size of "height" (*Hint: Make Python do the times-10 calculation for you. In Python a "*" means multiply*)
 - Print "great_height"
 
 ### Learning more about variables
