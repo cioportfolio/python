@@ -206,9 +206,9 @@ It is normal to use all of these structures in your program.
 Your program can do different things in different circumstances. Here is a simple example.
 
 ```python
-your_age = int(input("Enter someone's age:"))
-print('You have entered: ', your_age)
-if your_age < 16:
+attendee_age = int(input("Enter someone's age:"))
+print('You have entered: ', attendee_age)
+if attendee_age < 16:
     print('A responsible adult needs to stay with them at a TechJam')
 print('Thank you')
 ```
